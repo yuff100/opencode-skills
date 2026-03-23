@@ -5,6 +5,7 @@ Terms where standard translation is non-obvious or easily mistranslated. Common 
 | English | Chinese | Notes |
 |---------|---------|:------|
 | AI Agent | AI 智能体 | |
+| Agentic AI | AI 智能体 | |
 | Vibe Coding | 氛围编程 | |
 | the Bitter Lesson | 苦涩的教训 | Rich Sutton's essay |
 | Context Engineering | 上下文工程 | |
