@@ -127,6 +127,12 @@ Use the main agent for critique, revision, and polish even if the initial draft 
 
 - Ensure the final output preserves Markdown structure and stable file naming.
 - Re-read the translation for terminology drift, broken links, code block corruption, and inconsistent annotation depth.
+- **Completeness Check (MANDATORY)**: After translation completes, **verify against the source material**:
+  - Count the number of top-level sections/headings in source and translation
+  - Compare that all paragraphs, lists, code blocks, and concluding sections are present
+  - Verify no content was truncated due to context window limits
+  - If the source was truncated, explicitly fetch the remaining content and translate it before completing
+  - Flag any missing content to the user instead of silently omitting it
 - If `EXTEND.md` creation or chunk automation was skipped because tooling was missing, state that explicitly.
 
 ## Author
