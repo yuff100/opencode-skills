@@ -1,3 +1,8 @@
+---
+name: "translate"
+description: "Translates and localizes articles, documents, URLs, and Markdown content between languages with terminology consistency management, automatic chunking for long documents, and multiple quality modes."
+---
+
 # Translate
 
 Use when the user asks to translate or localize an article, document, URL, Markdown file, or inline text between languages, especially when terminology consistency, long-document chunking, or publication-quality refinement matters. Supports quick, normal, and refined modes plus EXTEND.md preferences and glossary loading.
@@ -28,15 +33,7 @@ Ported from muyi-codex-skills by shuimuyi (https://github.com/ohmuyi).
 
 ## Preference lookup
 
-Check for `EXTEND.md` in this exact order and stop at the first match:
-
-1. `.translate/EXTEND.md`
-2. `${XDG_CONFIG_HOME:-$HOME/.config}/translate/EXTEND.md`
-3. `$HOME/.translate/EXTEND.md`
-
-If a file is found, read it and apply it. On first use in a session, briefly tell the user which file is active.
-
-If no file exists, do not silently assume a persistent profile. Before translating, ask once for target language, mode, audience, style, and save location, then create `EXTEND.md`. If the user explicitly says to skip setup, proceed with built-in defaults for this run only and state that no preferences were saved.
+Check for `EXTEND.md` in standard location order (project local → user config → legacy fallback). If found, load and apply. If no configuration exists and this is the first run, ask for user preferences and create `EXTEND.md`. If user skips setup, use built-in defaults.
 
 ## Defaults
 
@@ -47,63 +44,20 @@ If no file exists, do not silently assume a persistent profile. Before translati
 - `chunk_threshold`: `4000`
 - `chunk_max_words`: `5000`
 
-## Workflow
+See `references/config/extend-schema.md` for complete configuration documentation.
 
-1. Load preferences and merge glossary sources.
-   - Load the built-in language-pair glossary when available.
-   - Merge `EXTEND.md` inline `glossary`.
-   - Merge `EXTEND.md` `glossary_files`, resolved relative to the `EXTEND.md` file.
-   - Merge any glossary override provided for the current run.
-   - Read `references/config/extend-schema.md` only if field details are needed.
-2. Materialize the source.
-   - File path: use as-is.
-   - URL or inline text: save it to `translate/{slug}.md` first.
-   - Create the output directory as `{source-dir}/{source-basename}-{target-lang}/`.
-   - Follow `references/workflow-mechanics.md` for naming and conflict handling.
-3. Select the mode.
-   - Quick: translate directly.
-   - Normal: analyze, assemble context, then translate.
-   - Refined: analyze, draft, critique, revise, then polish.
-   - If the user says `快翻` or `quick`, use quick mode.
-   - If the user says `精翻`, `refined`, `publication quality`, or asks to continue polishing, use refined mode.
-   - Otherwise use the configured default.
-4. Assess content length.
-   - Quick mode never chunks.
-   - Normal and refined modes translate as a single unit below `chunk_threshold`.
-   - At or above the threshold, extract terminology first, then chunk the Markdown.
-5. Chunk long Markdown with `scripts/main.ts`.
+## Workflow Summary
 
-```bash
-bun scripts/main.ts <file> --max-words <n> --output-dir <output-dir>
-```
+1. **Load Preferences** - Merge configuration and glossary from all sources
+2. **Materialize Source** - Save URL/inline text to file, create output directory (see `references/workflow-mechanics.md`)
+3. **Select Mode** - Quick (direct), Normal (analyze + translate), or Refined (full critique-revision polish)
+4. **Assess Length** - Chunk long documents at or above threshold using `scripts/main.ts` with bun/npx
+5. **Translate** - Translate chunks sequentially, merge results, preserve structure
+6. **Apply Principles** - Preserve meaning, keep terminology consistent, maintain Markdown structure
+7. **Save Outputs** - Stable filenames based on mode (quick: `translation.md`, full mode: multiple step files)
+8. **Final Check** - Lightweight check for source-language text in images
 
-If only `npx` is available:
-
-```bash
-npx -y bun scripts/main.ts <file> --max-words <n> --output-dir <output-dir>
-```
-
-This writes chunk files under `<output-dir>/chunks/`.
-
-6. For chunked translation, create shared context in `02-prompt.md` using `references/subagent-prompt-template.md`.
-   - Translate chunks sequentially by default.
-   - Only use worker agents in parallel if the user explicitly asked for delegation or sub-agents and the chunks are independent.
-   - Merge translated chunks in order.
-   - If `chunks/frontmatter.md` exists, prepend it before saving the merged result.
-7. Apply these translation principles.
-   - Preserve meaning, facts, Markdown structure, links, and code blocks.
-   - Translate for natural target-language flow, not literal word order.
-   - Keep terminology consistent and annotate first occurrences only when useful.
-   - Preserve figurative meaning and emotional tone, even if wording must change.
-   - Add concise translator's notes only when the target audience truly needs them.
-   - If YAML frontmatter exists, rename source metadata fields with a `source` prefix and add translated top-level text fields where appropriate.
-8. Save outputs with stable filenames.
-   - Quick: `translation.md`
-   - Normal: `01-analysis.md`, `02-prompt.md`, `translation.md`
-   - Refined: `01-analysis.md`, `02-prompt.md`, `03-draft.md`, `04-critique.md`, `05-revision.md`, `translation.md`
-9. After the final translation, do a lightweight image-language check.
-   - If a referenced image likely still contains source-language text, tell the user as a plain list.
-   - Do not localize images unless the user asks.
+Detailed mechanics for each step are in the reference documents.
 
 ## Mode details
 

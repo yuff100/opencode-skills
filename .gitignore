@@ -3,3 +3,9 @@
 Thumbs.db
 *.swp
 *.tmp
+
+# Dependencies
+node_modules/
+**/node_modules/
+bun.lock
+package-lock.json

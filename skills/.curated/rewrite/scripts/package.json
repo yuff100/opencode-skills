@@ -1,0 +1,12 @@
+{
+  "name": "rewrite-helper",
+  "version": "1.0.0",
+  "description": "Helper scripts for rewrite skill",
+  "main": "fetch-url.js",
+  "dependencies": {
+    "jsdom": "^24.0.0"
+  },
+  "scripts": {
+    "fetch": "node fetch-url.js"
+  }
+}

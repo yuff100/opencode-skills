@@ -1,0 +1,37 @@
+# Rewrite Configuration for WeChat Official Accounts
+
+# Who is your audience?
+# Options: general, technical, business, student
+target_audience: general
+
+# What writing tone do you prefer?
+# Options: conversational, formal, story-telling, inspirational
+tone: conversational
+
+# Where should images come from?
+# Options: web (search web), ai (generate prompts), none (no images)
+image_source: web
+
+# How many images per 1000 words? (1-5)
+image_frequency: 2
+
+# Maximum word count after rewriting (uncomment to enable)
+# max_word_count: 4000
+
+# Add YAML frontmatter with metadata?
+add_frontmatter: true
+
+# Include link back to original source?
+include_original_source: true
+
+# Apply WeChat-specific formatting (short paragraphs, spacing)?
+wechat_formatting: true
+
+# Add dividers between major sections?
+add_divider: true
+
+# Keywords to avoid in image search (comma separated)
+# avoid_keywords: bad, keyword1, keyword2
+
+# Preferred image aspect ratio
+preferred_image_aspect: 16:9
