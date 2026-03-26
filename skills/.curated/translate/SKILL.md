@@ -136,6 +136,15 @@ Use the main agent for critique, revision, and polish even if the initial draft 
 - **File Existence Check (MANDATORY)**: After saving the output, **verify the file actually exists** on the filesystem before reporting completion. If the file does not exist, re-save it and verify again. Do not report "saved" when the file cannot be accessed.
 - If `EXTEND.md` creation or chunk automation was skipped because tooling was missing, state that explicitly.
 
+## Post-Translation Tasks for Publication
+
+If the translated article is intended for Chinese tech blog or WeChat public account publication:
+
+1. **Generate 5 WeChat public account titles**: Suggest 5 catchy, clickable titles in Chinese that fit WeChat reading habits
+2. **Write 1-2 sentence summary**: Provide a concise introduction that summarizes the core value of the article for readers
+
+Both are for the author's reference when preparing to publish.
+
 ## Author
 
 shuimuyi (https://github.com/ohmuyi)
