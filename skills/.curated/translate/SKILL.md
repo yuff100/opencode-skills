@@ -133,6 +133,7 @@ Use the main agent for critique, revision, and polish even if the initial draft 
   - Verify no content was truncated due to context window limits
   - If the source was truncated, explicitly fetch the remaining content and translate it before completing
   - Flag any missing content to the user instead of silently omitting it
+- **File Existence Check (MANDATORY)**: After saving the output, **verify the file actually exists** on the filesystem before reporting completion. If the file does not exist, re-save it and verify again. Do not report "saved" when the file cannot be accessed.
 - If `EXTEND.md` creation or chunk automation was skipped because tooling was missing, state that explicitly.
 
 ## Author
