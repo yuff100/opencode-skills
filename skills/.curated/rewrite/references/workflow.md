@@ -109,10 +109,10 @@ Apply these transformation rules according to configuration:
    ```yaml
    ---
    title: [rewritten title]
-   original_url: [source URL]
    date: [current date]
-   word_count: [final word count]
-   images_used: [number]
+   tags: [comma-separated tags]
+   draft: [true/false]
+   summary: [one-sentence summary of the article]
    ---
    ```
 2. Add link back to original source at the end if enabled
