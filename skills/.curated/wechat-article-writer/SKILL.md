@@ -2,7 +2,7 @@
 name: wechat-article-writer
 description: 公众号文章自动化写作流程。支持资料搜索、文章撰写、爆款标题生成、排版优化、质量检查。当用户提到写公众号、微信文章、自媒体写作、爆款文章、内容创作时使用此 skill。
 metadata:
-  author: iamzhihuix
+  author: Fisher Yu
   version: "2.0.0"
 ---
 
