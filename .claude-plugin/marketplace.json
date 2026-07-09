@@ -3,12 +3,12 @@
     "name": "opencode-skills",
     "source": "./",
     "skills": [
-      "./skills/opencode-anti-sycophancy",
-      "./skills/opencode-distill-docs",
-      "./skills/opencode-rewrite",
-      "./skills/opencode-team",
-      "./skills/opencode-translate",
-      "./skills/opencode-wechat-article-writer"
+      "./skills/anti-sycophancy",
+      "./skills/distill-docs",
+      "./skills/rewrite",
+      "./skills/team",
+      "./skills/translate",
+      "./skills/wechat-article-writer"
     ]
   }]
 }

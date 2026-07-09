@@ -4,10 +4,10 @@
 
 ## 仓库结构
 
-每个 skill 是一个独立目录，位于 `skills/opencode-<name>/` 下。
+每个 skill 是一个独立目录，位于 `skills/<name>/` 下。
 
 ```
-skills/opencode-<name>/
+skills/<name>/
 ├── SKILL.md        # 【必需】核心指令文件（YAML frontmatter + Markdown 正文）
 ├── LICENSE.txt     # 【推荐】MIT 许可
 ├── scripts/        # 【可选】辅助脚本
@@ -23,7 +23,7 @@ skills/opencode-<name>/
 
 ```yaml
 ---
-name: opencode-<name>
+name: <name>
 description: >-
   功能描述（最长 1024 字符）
   包含：核心功能 + 触发条件
@@ -55,5 +55,5 @@ metadata:
 ## 安装
 
 ```bash
-skill install https://github.com/yuff100/opencode-skills/tree/main/skills/opencode-<name>
+skill install https://github.com/yuff100/opencode-skills/tree/main/skills/<name>
 ```

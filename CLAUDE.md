@@ -5,7 +5,7 @@
 ```
 opencode-skills/
 ├── skills/                 # 所有 skill，每个独立目录
-│   ├── opencode-<name>/    # 命名规范: opencode- 前缀
+│   ├── <name>/            # 命名规范: 小写 kebab-case
 │   │   ├── SKILL.md        # 【必需】核心指令文件
 │   │   ├── scripts/        # 【可选】辅助脚本
 │   │   ├── references/     # 【可选】参考文档
@@ -24,8 +24,7 @@ opencode-skills/
 
 ## Skill 命名规范
 
-- 所有 skill 目录必须以 `opencode-` 前缀开头
-- 目录名使用小写字母和连字符（kebab-case）
+- 目录名使用小写字母和连字符（kebab-case），不加 `opencode-` 前缀
 - 每个 skill 至少包含 `SKILL.md`
 
 ## SKILL.md 规范
@@ -34,7 +33,7 @@ opencode-skills/
 
 ```yaml
 ---
-name: opencode-<name>
+name: <name>
 description: >-
   功能描述 + 触发条件
 version: <semver>
@@ -51,7 +50,7 @@ metadata:
 
 ## 新增 Skill 流程
 
-1. 在 `skills/` 下创建 `opencode-<name>/` 目录
+1. 在 `skills/` 下创建 `<name>/` 目录
 2. 编写 `SKILL.md`（参考现有 skill 格式）
 3. 添加 `LICENSE.txt`（MIT）
 4. 可选：添加 `references/`、`scripts/`、`assets/`

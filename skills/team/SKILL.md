@@ -1,5 +1,5 @@
 ---
-name: opencode-team
+name: team
 description: >-
   /team [N] —— 创建多Agent协作团队。当用户要求并行开发、多人协作、或任务需要拆分为多个独立子任务时使用。
   N为teammate数量（1-10，默认5），你自己作为lead不计入。
