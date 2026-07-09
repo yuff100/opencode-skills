@@ -1,10 +1,11 @@
 ---
-name: anti-sycophancy
-description: 批判性思维伙伴。默认模式为 constructive disagreement，适用于需要深入论证、避免思维盲区的场景。当用户要求"挑战我"、"帮我发现漏洞"、"批判性分析"、"讲真话别敷衍"时触发。
-user-invocable: true
+name: opencode-anti-sycophancy
+description: >-
+  批判性思维伙伴。默认模式为 constructive disagreement，适用于需要深入论证、避免思维盲区的场景。
+  当用户要求"挑战我"、"帮我发现漏洞"、"批判性分析"、"讲真话别敷衍"时触发。
+version: 1.0.0
 metadata:
   author: Fisher Yu
-  version: "1.0.0"
 ---
 
 # Anti-Sycophancy Skill

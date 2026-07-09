@@ -1,6 +1,11 @@
 ---
-name: "rewrite"
-description: "Rewrites web content for WeChat Official Accounts publication with automatic image insertion and formatting adjustments. Takes a URL input, extracts content, restructures for mobile reading, and generates optimized titles."
+name: opencode-rewrite
+description: >-
+  Rewrites web content for WeChat Official Accounts publication with automatic image insertion and formatting adjustments.
+  Takes a URL input, extracts content, restructures for mobile reading, and generates optimized titles.
+version: 1.0.0
+metadata:
+  author: Fisher Yu
 ---
 
 # Rewrite

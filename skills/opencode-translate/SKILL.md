@@ -1,6 +1,11 @@
 ---
-name: "translate"
-description: "Translates and localizes articles, documents, URLs, and Markdown content between languages with terminology consistency management, automatic chunking for long documents, and multiple quality modes."
+name: opencode-translate
+description: >-
+  Translates and localizes articles, documents, URLs, and Markdown content between languages with terminology consistency
+  management, automatic chunking for long documents, and multiple quality modes.
+version: 1.0.0
+metadata:
+  author: Fisher Yu
 ---
 
 # Translate

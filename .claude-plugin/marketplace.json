@@ -1,0 +1,14 @@
+{
+  "plugins": [{
+    "name": "opencode-skills",
+    "source": "./",
+    "skills": [
+      "./skills/opencode-anti-sycophancy",
+      "./skills/opencode-distill-docs",
+      "./skills/opencode-rewrite",
+      "./skills/opencode-team",
+      "./skills/opencode-translate",
+      "./skills/opencode-wechat-article-writer"
+    ]
+  }]
+}

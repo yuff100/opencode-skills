@@ -1,6 +1,9 @@
 ---
-description: "/distill-docs file1 [file2 ...]  — 归档规划文档：提取业务规则沉淀到项目文档，然后删除原文件。当用户想要清理执行计划、分析报告、方案评审等临时性规划文档时使用。"
-user-invocable: true
+name: opencode-distill-docs
+description: >-
+  /distill-docs file1 [file2 ...] — 归档规划文档：提取业务规则沉淀到项目文档，然后删除原文件。
+  当用户想要清理执行计划、分析报告、方案评审等临时性规划文档时使用。
+version: 1.0.0
 metadata:
   author: Fisher Yu
 ---
