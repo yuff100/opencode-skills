@@ -10,12 +10,19 @@ skill install https://github.com/yuff100/opencode-skills/tree/main/skills/<name>
 
 安装完成后重启 OpenCode。skills 默认安装到 `~/.agents/skills/`。
 
+`maintain-repo-wiki` 安装示例：
+
+```bash
+skill install https://github.com/yuff100/opencode-skills/tree/main/skills/maintain-repo-wiki
+```
+
 ## Skills
 
 | Skill | 描述 |
 |-------|------|
 | `anti-sycophancy` | 批判性思维伙伴。默认 constructive disagreement，帮你识别思维盲区 |
 | `distill-docs` | `/distill-docs` — 归档规划文档，提取业务规则沉淀到项目文档 |
+| `maintain-repo-wiki` | 维护仓库工程知识库（Repo/System/Knowledge Repo 三模式） |
 | `rewrite` | Rewrite web content for WeChat Official Accounts publication |
 | `team` | `/team [N]` — 创建多 Agent 协作团队，并行执行子任务 |
 | `translate` | 三模式翻译（quick/normal/refined），术语管理，长文自动分块 |
@@ -42,6 +49,22 @@ skill install https://github.com/yuff100/opencode-skills/tree/main/skills/<name>
 3. **对齐确认** — 报告计划，等待用户确认
 4. **执行变更** — 写入目标文档，删除原文件
 5. **验证** — 用核心原则自检
+
+#### `maintain-repo-wiki`
+
+构建并持续维护仓库知识库（Markdown wiki），目标是让 wiki 能支撑：
+
+- 新同学 onboarding：快速理解系统架构、服务边界与关键入口
+- 集成与变更评估：定位 API/字段传播/依赖关系的影响面
+- 线上排障：基于日志、指标、告警与 runbook 快速收敛问题
+
+支持三种模式：
+
+- **Repo Mode**：单仓库 `wiki/`
+- **System Mode**：跨仓库系统级 `system-wiki/`
+- **Knowledge Repo Mode**：集中式知识仓（`repos/*/wiki` + `system/wiki`）
+
+要求按“先广后深”沉淀知识：先架构和源码地图，再到业务流、字段传播、依赖故障影响、配置缓存、副作用与运维证据。
 
 #### `team`
 

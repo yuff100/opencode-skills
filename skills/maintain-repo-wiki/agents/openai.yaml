@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Wiki"
+  short_description: "Maintain repository knowledge from architecture to business flows and runtime troubleshooting."
+  default_prompt: "Use $maintain-repo-wiki to build a traceable, persistent Markdown knowledge base for the current repository or multiple microservice repositories, covering architecture, business-flow details, field propagation, API/runbook, metrics/logs/alerts, and dependency-failure impact."

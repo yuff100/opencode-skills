@@ -5,6 +5,7 @@
     "skills": [
       "./skills/anti-sycophancy",
       "./skills/distill-docs",
+      "./skills/maintain-repo-wiki",
       "./skills/rewrite",
       "./skills/team",
       "./skills/translate",

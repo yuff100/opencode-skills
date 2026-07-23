@@ -1,0 +1,9 @@
+# Input repository list. source_type supports git or local.
+repos:
+  - name: example_service
+    source_type: git
+    url: https://code.example.com/org/example_service
+    branch: master
+    role: pending-confirmation
+    owner: pending-confirmation
+    scan_mode: source_and_wiki
